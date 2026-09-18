@@ -183,6 +183,14 @@
     margin-bottom:34px;
   }
   .sheet-photo{width:100%;height:220px;object-fit:cover;display:block;border-bottom:1px solid var(--ink);}
+  .sheet-photo-grid{display:grid;border-bottom:1px solid var(--ink);}
+  .sheet-photo-grid img{width:100%;height:220px;object-fit:cover;display:block;}
+  .sheet-photo-grid.g2{grid-template-columns:1fr 1fr;}
+  .sheet-photo-grid.g3{grid-template-columns:1fr 1fr 1fr;}
+  @media (max-width:560px){
+    .sheet-photo-grid.g2, .sheet-photo-grid.g3{grid-template-columns:1fr 1fr;}
+    .sheet-photo-grid.g3 img:nth-child(3){grid-column:1/3;}
+  }
   .sheet-body{display:grid;grid-template-columns:1fr 300px;}
   .sheet-main{padding:34px 36px;}
   .sheet-status{
@@ -204,6 +212,20 @@
   @media (max-width:720px){
     .sheet-body{grid-template-columns:1fr;}
     .sheet-block{border-left:none;border-top:1px solid var(--paper-2);}
+  }
+
+  /* ---------- FIELD GALLERY ---------- */
+  .gallery{background:var(--paper-2);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+  }
+  .gallery-grid img{
+    width:100%;height:190px;object-fit:cover;display:block;
+    filter:grayscale(15%);transition:filter .2s ease;
+  }
+  .gallery-grid img:hover{filter:grayscale(0%);}
+  @media (max-width:760px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
   }
 
   /* ---------- CTA ---------- */
@@ -280,13 +302,13 @@
       <div><div class="stat-num">RW</div><div class="stat-label">NATIONWIDE COVERAGE</div></div>
     </div>
 
-    <img class="photo photo-hero" src="assets/hero.jpg" alt="LOVY Construction — site photo" onerror="this.remove()">
+    <img class="photo photo-hero" src="Main1.jpg" alt="LOVY Construction — site photo" onerror="this.remove()">
   </div>
 </section>
 
 <section class="about section" id="about">
   <div class="wrap">
-    <img class="photo photo-about" src="assets/about.jpg" alt="LOVY Construction — team or site" onerror="this.remove()">
+    <img class="photo photo-about" src="main%202.jpg" alt="LOVY Construction — team or site" onerror="this.remove()">
   </div>
   <div class="wrap about-grid">
     <div>
@@ -369,7 +391,11 @@
     </div>
 
     <div class="sheet">
-      <img class="sheet-photo" src="assets/project-mining.jpg" alt="Mining shaft feasibility project" onerror="this.remove()">
+      <div class="sheet-photo-grid g3">
+        <img src="NBM.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+        <img src="NBM3.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+        <img src="mining.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+      </div>
       <div class="sheet-body">
         <div class="sheet-main">
           <div class="sheet-status">2026 · COMPLETED</div>
@@ -385,7 +411,10 @@
     </div>
 
     <div class="sheet">
-      <img class="sheet-photo" src="assets/project-nursery.jpg" alt="Nursery school project" onerror="this.remove()">
+      <div class="sheet-photo-grid g2">
+        <img src="school.jpg" alt="G+3 nursery school under construction" onerror="this.remove()">
+        <img src="school%202.jpg" alt="G+3 nursery school under construction" onerror="this.remove()">
+      </div>
       <div class="sheet-body">
         <div class="sheet-main">
           <div class="sheet-status">DESIGN</div>
@@ -401,7 +430,10 @@
     </div>
 
     <div class="sheet">
-      <img class="sheet-photo" src="assets/project-residential.jpg" alt="Residential building project" onerror="this.remove()">
+      <div class="sheet-photo-grid g2">
+        <img src="residential.jpg" alt="Slab reinforcement works, residential building" onerror="this.remove()">
+        <img src="resident%205.jpg" alt="Structural frame, residential building" onerror="this.remove()">
+      </div>
       <div class="sheet-body">
         <div class="sheet-main">
           <div class="sheet-status">2025 · COMPLETED</div>
@@ -414,6 +446,27 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="gallery section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-tag">— IN THE FIELD</div>
+    <h2 style="margin-bottom:34px;font-size:clamp(22px,2.8vw,30px);">Survey, structure and site work across active projects.</h2>
+  </div>
+  <div class="gallery-grid">
+    <img src="NBM4.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+    <img src="NBM5.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+    <img src="NBM6.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+    <img src="NBM7.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+    <img src="mining%204.jpg" alt="New Bugarama Mining — site works" onerror="this.remove()">
+    <img src="school%203.jpg" alt="G+3 nursery school works" onerror="this.remove()">
+    <img src="school%204.jpg" alt="G+3 nursery school works" onerror="this.remove()">
+    <img src="school%206.jpg" alt="G+3 nursery school works" onerror="this.remove()">
+    <img src="school%209.jpg" alt="G+3 nursery school works" onerror="this.remove()">
+    <img src="residential%206.jpg" alt="Residential building works" onerror="this.remove()">
+    <img src="residential%207.jpg" alt="Residential building works" onerror="this.remove()">
+    <img src="main%203.jpg" alt="LOVY Construction — site work" onerror="this.remove()">
   </div>
 </section>
 
